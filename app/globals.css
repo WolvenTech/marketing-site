@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+/*
+ * Token source: DESIGN.md (NVIDIA-inspired). DEVIATION: the spec's default
+ * treatment is a white body canvas framed by black hero/footer chapters.
+ * Per brief, dark is inverted to be the default scheme site-wide — canvas,
+ * surface-soft and card surfaces are all near-black/black now; the original
+ * light-canvas grays (mute/stone/ash/hairline/link-blue/semantic colors)
+ * are re-tuned for contrast against black instead of white. Brand green,
+ * the 2px radius scale, and the hairline-rule grid are unchanged.
+ */
+@theme {
+  /* Brand */
+  --color-primary: #76b900;
+  --color-primary-dark: #5a8d00;
+  --color-accent-green-pale: #bff230;
+  --color-on-primary: #000000;
+
+  /* Surfaces (dark-default) */
+  --color-canvas: #0a0a0a; /* was #ffffff — now the default body surface */
+  --color-surface-dark: #000000; /* true black hero/footer/nav, unchanged */
+  --color-surface-soft: #151515; /* was #f7f7f7 — subtle elevated dark panel */
+  --color-surface-elevated: #1c1c1c;
+  --color-hairline: rgba(255, 255, 255, 0.14); /* was #cccccc, tuned for dark */
+  --color-hairline-strong: #5e5e5e;
+
+  /* Text */
+  --color-ink: #000000; /* reserved: text on light/green chrome only */
+  --color-body: #e6e6e6; /* was #1a1a1a — body copy on dark canvas */
+  --color-mute: #9a9a9a;
+  --color-stone: #7d7d7d;
+  --color-ash: #5c5c5c;
+  --color-on-dark: #ffffff;
+  --color-on-dark-mute: rgba(255, 255, 255, 0.7);
+
+  /* Semantic (brightened where needed for dark-canvas contrast) */
+  --color-link-blue: #6ea8fe;
+  --color-error: #ff5c5c;
+  --color-error-deep: #650b0b;
+  --color-warning: #ff8a3d;
+  --color-warning-bright: #ef9100;
+  --color-success-deep: #5fb300;
+  --color-accent-yellow-pale: #feeeb2;
+  --color-accent-purple: #b466e0;
+  --color-accent-purple-deep: #4d1368;
+  --color-accent-purple-pale: #f9d4ff;
+
+  /* Radius — aggressively angular, 2px ceiling on interactive elements */
+  --radius-xs: 1px;
+  --radius-sm: 2px;
+
+  /* Spacing scale (8px base unit) */
+  --spacing-xxs: 2px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 24px;
+  --spacing-xxl: 32px;
+  --spacing-section: 64px;
+
+  /* Font family custom properties (--font-display / --font-body) are
+     published on <html> by next/font in app/layout.tsx and consumed
+     directly below via inheritance — no theme redeclaration needed. */
+
+  /* Fluid type scale, clamp()'d between 320px and 1280px viewports,
+     derived from DESIGN.md's px sizes (see typography table there). */
+  --text-display-xl: clamp(2rem, 1.6667rem + 1.6667vw, 3rem);
+  --text-display-xl--line-height: 1.25;
+  --text-display-lg: clamp(1.625rem, 1.4167rem + 1.0417vw, 2.25rem);
+  --text-display-lg--line-height: 1.25;
+  --text-heading-xl: clamp(1.25rem, 1.1667rem + 0.4167vw, 1.5rem);
+  --text-heading-xl--line-height: 1.25;
+  --text-heading-lg: clamp(1.125rem, 1.0417rem + 0.4167vw, 1.375rem);
+  --text-heading-lg--line-height: 1.75;
+  --text-heading-md: clamp(1.0625rem, 1rem + 0.3125vw, 1.25rem);
+  --text-heading-md--line-height: 1.25;
+  --text-heading-sm: clamp(1rem, 0.9583rem + 0.2083vw, 1.125rem);
+  --text-heading-sm--line-height: 1.4;
+  --text-card-title: clamp(1rem, 0.9792rem + 0.1042vw, 1.0625rem);
+  --text-card-title--line-height: 1.47;
+  --text-body-md: clamp(0.9375rem, 0.9167rem + 0.1042vw, 1rem);
+  --text-body-md--line-height: 1.5;
+  --text-body-strong: clamp(0.9375rem, 0.9167rem + 0.1042vw, 1rem);
+  --text-body-strong--line-height: 1.5;
+  --text-body-sm: clamp(0.875rem, 0.8542rem + 0.1042vw, 0.9375rem);
+  --text-body-sm--line-height: 1.67;
+  --text-button-lg: clamp(1rem, 0.9583rem + 0.2083vw, 1.125rem);
+  --text-button-lg--line-height: 1.25;
+  --text-button-md: clamp(0.9375rem, 0.9167rem + 0.1042vw, 1rem);
+  --text-button-md--line-height: 1.25;
+  --text-button-sm: clamp(0.8438rem, 0.825rem + 0.0938vw, 0.9rem);
+  --text-button-sm--line-height: 1;
+  --text-link-md: clamp(0.875rem, 0.8542rem + 0.1042vw, 0.9375rem);
+  --text-link-md--line-height: 1.5;
+  --text-caption-md: clamp(0.8125rem, 0.7917rem + 0.1042vw, 0.875rem);
+  --text-caption-md--line-height: 1.43;
+  --text-caption-sm: clamp(0.7188rem, 0.7083rem + 0.0521vw, 0.75rem);
+  --text-caption-sm--line-height: 1.25;
+  --text-caption-xs: clamp(0.6562rem, 0.6458rem + 0.0521vw, 0.6875rem);
+  --text-caption-xs--line-height: 1;
+  --text-utility-xs: clamp(0.5938rem, 0.5833rem + 0.0521vw, 0.625rem);
+  --text-utility-xs--line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-body);
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display), Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+.text-caption-md,
+.text-utility-xs {
+  text-transform: uppercase;
+}
+
+.tracking-button-sm {
+  letter-spacing: 0.144px;
+}
