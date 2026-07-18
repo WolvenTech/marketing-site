@@ -1,0 +1,11 @@
+---
+description: marketing-site adapter — policy lives in AGENTS.md
+globs:
+alwaysApply: true
+---
+
+Use [AGENTS.md](AGENTS.md) as the canonical project instruction file.
+
+Keep Cursor-specific guidance minimal. Do not duplicate or fork policy from `AGENTS.md`.
+
+Repo scope: builds and publishes the marketing-site Docker image only; `wolven-prod` deploys it — no deploy authority, no production secrets, no SSH here.

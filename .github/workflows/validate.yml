@@ -1,0 +1,67 @@
+name: Validate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  lint-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 24
+      - name: Install dependencies
+        run: |
+          corepack enable
+          pnpm install --frozen-lockfile
+      - name: Lint
+        run: pnpm lint
+      - name: Type check
+        run: pnpm typecheck
+      - name: Build
+        run: pnpm build
+
+  docker-smoke-test:
+    needs: lint-and-build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Build image
+        run: docker build -t marketing-site:ci .
+      - name: Run container
+        run: docker run -d --name marketing-site-ci -p 3000:3000 marketing-site:ci
+      - name: Wait for container to be ready
+        run: |
+          set -euo pipefail
+          for i in $(seq 1 30); do
+            if curl -sf http://localhost:3000/healthz >/dev/null; then
+              echo "Container is ready."
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "Container did not become ready in time." >&2
+          docker logs marketing-site-ci >&2
+          exit 1
+      - name: Verify healthz from host
+        run: curl -sf http://localhost:3000/healthz
+      - name: Verify healthz from inside container
+        # Mirrors the exact healthcheck the wolven-prod deployment repo runs against
+        # this image in production, so this is the real contract, not a host-only proxy for it.
+        run: docker exec marketing-site-ci wget --quiet --tries=1 --spider http://127.0.0.1:3000/healthz
+      - name: Clean up
+        if: always()
+        run: |
+          docker stop marketing-site-ci 2>/dev/null || true
+          docker rm marketing-site-ci 2>/dev/null || true
+          docker rmi marketing-site:ci 2>/dev/null || true
