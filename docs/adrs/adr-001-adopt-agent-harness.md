@@ -21,13 +21,13 @@ A unified, tool-agnostic harness is required to govern how assistants interact w
 We adopt the **Wolven agent harness** as the authoritative operational contract for this repository, organized around four core pillars:
 
 1. **Tool-Agnostic Canonical Authority (`AGENTS.md`)**
-   - [`AGENTS.md`](file:///Users/rafael/Dev/wolven/marketing-site/AGENTS.md) is the single source of truth for agent behavior. All editor-specific adapters (`.cursor/`, `.claude/`, etc.) stay thin and point directly to `AGENTS.md` without duplicating or diverging from repository policy.
+   - [`AGENTS.md`](../../AGENTS.md) is the single source of truth for agent behavior. All editor-specific adapters (`.cursor/`, `.claude/`, etc.) stay thin and point directly to `AGENTS.md` without duplicating or diverging from repository policy.
    - The repository maintains strict scope: it builds and publishes a stateless Next.js marketing container image to GHCR. It owns **zero deploy authority**, **zero secrets**, and **zero persisted state**. Production deployment concerns belong entirely to `wolven-prod`.
 
 2. **Fail-Closed Verification & Architecture Claims**
    - Changes to harness configuration and profile documentation (`docs/**`) are validated via `wolven-harness validate` in pre-commit hooks and CI.
    - Any reference to an ADR (`ADR-NNN` or `adr-NNN-<slug>`) anywhere in the tree is a checkable claim that must resolve to a `stable` record under `docs/adrs/`.
-   - Profile documents must adhere strictly to [`docs/WRITING-PROFILE.md`](file:///Users/rafael/Dev/wolven/marketing-site/docs/WRITING-PROFILE.md).
+   - Profile documents must adhere strictly to [`docs/WRITING-PROFILE.md`](../WRITING-PROFILE.md).
 
 3. **Strict YAGNI and Deferral Registry**
    - Additions are evaluated through strict YAGNI (`pragmatic-guard`): present need (0–10) must be greater than or equal to complexity (0–10) to be approved.

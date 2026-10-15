@@ -26,7 +26,7 @@ skipped — no legacy ADRs
 - Context: Stateless Next.js marketing site publishing runtime Docker image to GHCR for consumption by `wolven-prod`.
 - Lifecycle: Prototype
 - Decided tools: Next.js 16 (App Router), React 19, Tailwind CSS 4, TypeScript, pnpm, Docker, GitHub Actions, Wolven Harness, QMD.
-- Decisions not yet in code: Project is tied to `wolven-prod` as an exposed pod behind their router; CI is stable and prod-connected.
+- Decisions not yet in code: Project runtime image is consumed by `wolven-prod` as an exposed pod behind their router; CI is strictly limited to build, test, and GHCR publish with zero production host connectivity or deploy authority.
 
 ## Research
 
