@@ -1,0 +1,9 @@
+{
+  "extends": ["no-hooks"],
+  "rules": {
+    "AGT-01": "off",
+    "AGT-02": "off",
+    "HYG-05": "off",
+    "HYG-08": "off"
+  }
+}

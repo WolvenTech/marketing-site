@@ -31,7 +31,9 @@ export function Footer() {
                 {column.links.map((link) => (
                   <li key={link}>
                     {/* Placeholder links — no routes exist for these yet. */}
-                    <span className="text-body-sm text-on-dark-mute">{link}</span>
+                    <span className="text-body-sm text-on-dark-mute">
+                      {link}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -40,10 +42,13 @@ export function Footer() {
         </div>
         <div className="mt-section flex flex-col gap-md border-t border-hairline-strong pt-xl md:flex-row md:items-center md:justify-between">
           <span className="text-utility-xs font-bold uppercase text-mute">
-            &copy; {new Date().getFullYear()} Wolven Forge (staging placeholder). All rights
-            reserved.
+            &copy; {new Date().getFullYear()} Wolven Forge (staging
+            placeholder). All rights reserved.
           </span>
-          <span className="inline-block h-3 w-3 bg-primary" aria-hidden="true" />
+          <span
+            className="inline-block h-3 w-3 bg-primary"
+            aria-hidden="true"
+          />
         </div>
       </div>
     </footer>

@@ -63,8 +63,8 @@ Docker image references must be all-lowercase — `docker pull` / `docker push` 
 
 This means:
 
-- Anywhere you reference the *GitHub org/repo*, mixed case (`WolvenTech`) is correct.
-- Anywhere you reference the *published image*, it must be lowercase (`wolventech`) — mixed case will fail to pull.
+- Anywhere you reference the _GitHub org/repo_, mixed case (`WolvenTech`) is correct.
+- Anywhere you reference the _published image_, it must be lowercase (`wolventech`) — mixed case will fail to pull.
 
 The parent repo (`wolven-prod`) currently has a **placeholder image pin using the mixed-case form**, which cannot actually be pulled as-is. Fixing that pin is explicitly a follow-up in `wolven-prod`, not something this repo can or should fix — this repo only controls what it publishes to, not how the parent references it.
 

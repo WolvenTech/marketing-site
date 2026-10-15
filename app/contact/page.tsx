@@ -17,7 +17,9 @@ export default function ContactPage() {
       <main>
         <section className="bg-surface-dark px-6 py-16 md:py-20">
           <div className="mx-auto max-w-[1280px]">
-            <span className="text-caption-md font-bold uppercase text-primary">Contact</span>
+            <span className="text-caption-md font-bold uppercase text-primary">
+              Contact
+            </span>
             <h1 className="mt-lg max-w-[20ch] text-display-lg font-bold text-on-dark">
               Reach the placeholder team.
             </h1>
@@ -31,7 +33,10 @@ export default function ContactPage() {
               directly instead.
             </p>
             <div className="mt-lg">
-              <CTA href="mailto:hello@staging-marketing-site.wolven.com.br" variant="primary">
+              <CTA
+                href="mailto:hello@staging-marketing-site.wolven.com.br"
+                variant="primary"
+              >
                 hello@staging-marketing-site.wolven.com.br
               </CTA>
             </div>

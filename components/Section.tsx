@@ -13,7 +13,12 @@ type SectionProps = {
   id?: string;
 };
 
-export function Section({ children, tone = "canvas", className = "", id }: SectionProps) {
+export function Section({
+  children,
+  tone = "canvas",
+  className = "",
+  id,
+}: SectionProps) {
   return (
     <section
       id={id}

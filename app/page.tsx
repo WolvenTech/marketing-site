@@ -5,22 +5,55 @@ import { CTA } from "@/components/CTA";
 
 // All company/product copy on this page is synthetic placeholder content.
 const stats = [
-  { value: "4.2x", caption: "Faster deploy cycles reported in placeholder pilot data." },
-  { value: "99.98%", caption: "Synthetic uptime figure for staging demonstration only." },
-  { value: "38%", caption: "Illustrative cost delta used to exercise this layout." },
+  {
+    value: "4.2x",
+    caption: "Faster deploy cycles reported in placeholder pilot data.",
+  },
+  {
+    value: "99.98%",
+    caption: "Synthetic uptime figure for staging demonstration only.",
+  },
+  {
+    value: "38%",
+    caption: "Illustrative cost delta used to exercise this layout.",
+  },
 ];
 
 const capabilities = [
-  { title: "Provisioning", body: "Stand up environments from a declarative spec, placeholder copy." },
-  { title: "Observability", body: "Trace requests end to end across synthetic services." },
-  { title: "Access control", body: "Scope credentials per workload, sample policy language." },
-  { title: "Rollback", body: "Revert a release in one step, demo-only description." },
+  {
+    title: "Provisioning",
+    body: "Stand up environments from a declarative spec, placeholder copy.",
+  },
+  {
+    title: "Observability",
+    body: "Trace requests end to end across synthetic services.",
+  },
+  {
+    title: "Access control",
+    body: "Scope credentials per workload, sample policy language.",
+  },
+  {
+    title: "Rollback",
+    body: "Revert a release in one step, demo-only description.",
+  },
 ];
 
 const resources = [
-  { tag: "WHITE PAPER", title: "Structured platform rollouts", body: "A placeholder resource entry used to test the resource-card pattern." },
-  { tag: "WEBINAR", title: "Staging environments at scale", body: "Synthetic session description for layout purposes only." },
-  { tag: "BLOG", title: "Notes on angular design systems", body: "Sample editorial teaser text, not a real article." },
+  {
+    tag: "WHITE PAPER",
+    title: "Structured platform rollouts",
+    body: "A placeholder resource entry used to test the resource-card pattern.",
+  },
+  {
+    tag: "WEBINAR",
+    title: "Staging environments at scale",
+    body: "Synthetic session description for layout purposes only.",
+  },
+  {
+    tag: "BLOG",
+    title: "Notes on angular design systems",
+    body: "Sample editorial teaser text, not a real article.",
+  },
 ];
 
 export default function Home() {
@@ -82,7 +115,9 @@ export default function Home() {
                 key={stat.value}
                 className="rounded-sm border border-hairline bg-surface-elevated p-xxl"
               >
-                <span className="text-display-lg font-bold text-primary">{stat.value}</span>
+                <span className="text-display-lg font-bold text-primary">
+                  {stat.value}
+                </span>
                 <p className="mt-sm text-body-md text-body">{stat.caption}</p>
               </div>
             ))}
@@ -93,13 +128,15 @@ export default function Home() {
         <Section tone="soft">
           <div className="grid grid-cols-1 gap-xxl lg:grid-cols-5">
             <div className="lg:col-span-2">
-              <span className="text-caption-md font-bold uppercase text-mute">Platform</span>
+              <span className="text-caption-md font-bold uppercase text-mute">
+                Platform
+              </span>
               <h2 className="mt-md text-display-lg font-bold text-on-dark">
                 Four primitives, one control plane.
               </h2>
               <p className="mt-lg text-body-md text-body">
-                Placeholder description of the underlying capability set used
-                to exercise this section&apos;s editorial layout.
+                Placeholder description of the underlying capability set used to
+                exercise this section&apos;s editorial layout.
               </p>
             </div>
             <div className="lg:col-span-3">
@@ -108,13 +145,22 @@ export default function Home() {
                   <li
                     key={item.title}
                     className={`relative flex items-start gap-lg py-lg ${
-                      i !== capabilities.length - 1 ? "border-b border-hairline" : ""
+                      i !== capabilities.length - 1
+                        ? "border-b border-hairline"
+                        : ""
                     }`}
                   >
-                    <span className="mt-[6px] h-3 w-3 shrink-0 bg-primary" aria-hidden="true" />
+                    <span
+                      className="mt-[6px] h-3 w-3 shrink-0 bg-primary"
+                      aria-hidden="true"
+                    />
                     <div>
-                      <h3 className="text-heading-md font-bold text-on-dark">{item.title}</h3>
-                      <p className="mt-xs text-body-sm text-mute">{item.body}</p>
+                      <h3 className="text-heading-md font-bold text-on-dark">
+                        {item.title}
+                      </h3>
+                      <p className="mt-xs text-body-sm text-mute">
+                        {item.body}
+                      </p>
                     </div>
                   </li>
                 ))}
@@ -125,15 +171,22 @@ export default function Home() {
 
         {/* Resource cards — canvas surface */}
         <Section tone="canvas">
-          <span className="text-caption-md font-bold uppercase text-mute">Resources</span>
-          <h2 className="mt-md text-display-lg font-bold text-on-dark">Latest write-ups</h2>
+          <span className="text-caption-md font-bold uppercase text-mute">
+            Resources
+          </span>
+          <h2 className="mt-md text-display-lg font-bold text-on-dark">
+            Latest write-ups
+          </h2>
           <div className="mt-xl grid grid-cols-1 gap-lg md:grid-cols-3">
             {resources.map((resource) => (
               <div
                 key={resource.title}
                 className="relative rounded-sm border border-hairline bg-surface-elevated p-xl"
               >
-                <span className="absolute left-0 top-0 h-3 w-3 bg-primary" aria-hidden="true" />
+                <span
+                  className="absolute left-0 top-0 h-3 w-3 bg-primary"
+                  aria-hidden="true"
+                />
                 <span className="text-caption-md font-bold uppercase text-mute">
                   {resource.tag}
                 </span>

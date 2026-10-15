@@ -21,7 +21,8 @@ const ibmPlexSans = IBM_Plex_Sans({
 });
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://staging-marketing-site.wolven.com.br";
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  "https://staging-marketing-site.wolven.com.br";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -61,7 +62,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${ibmPlexSans.variable}`}>
+    <html
+      lang="en"
+      className={`${spaceGrotesk.variable} ${ibmPlexSans.variable}`}
+    >
       <body>{children}</body>
     </html>
   );

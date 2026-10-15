@@ -27,6 +27,12 @@ jobs:
         run: pnpm lint
       - name: Type check
         run: pnpm typecheck
+      - name: Harness validate
+        run: pnpm harness:validate
+      - name: Format check
+        run: pnpm format:check
+      - name: Test
+        run: pnpm test
       - name: Build
         run: pnpm build
 
