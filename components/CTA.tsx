@@ -6,9 +6,12 @@ type CTASize = "sm" | "md" | "lg";
 
 const variantClasses: Record<CTAVariant, string> = {
   primary: "bg-primary text-on-primary hover:bg-primary-dark",
-  outline: "border-2 border-primary bg-transparent text-ink hover:bg-primary/10",
-  "outline-on-dark": "border border-on-dark bg-transparent text-on-dark hover:bg-on-dark/10",
-  ghost: "border-none bg-transparent p-0 text-primary underline-offset-4 hover:underline",
+  outline:
+    "border-2 border-primary bg-transparent text-ink hover:bg-primary/10",
+  "outline-on-dark":
+    "border border-on-dark bg-transparent text-on-dark hover:bg-on-dark/10",
+  ghost:
+    "border-none bg-transparent p-0 text-primary underline-offset-4 hover:underline",
 };
 
 const sizeClasses: Record<CTASize, string> = {
@@ -25,7 +28,13 @@ type CTAProps = {
   className?: string;
 };
 
-export function CTA({ href, children, variant = "primary", size = "md", className = "" }: CTAProps) {
+export function CTA({
+  href,
+  children,
+  variant = "primary",
+  size = "md",
+  className = "",
+}: CTAProps) {
   const isGhost = variant === "ghost";
   return (
     <Link

@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "hooks": {
+    "beforeShellExecution": [
+      {
+        "command": "./.agents/hooks/gate.sh"
+      }
+    ],
+    "afterFileEdit": [
+      {
+        "command": "./.agents/hooks/feedback.sh"
+      }
+    ]
+  }
+}

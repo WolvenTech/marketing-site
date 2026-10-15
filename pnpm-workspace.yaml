@@ -1,5 +1,6 @@
 allowBuilds:
   sharp: false
+  simple-git-hooks: set this to true or false
   unrs-resolver: false
 minimumReleaseAgeExclude:
-  - '@wolven-tech/harness@0.3.2'
+  - "@wolven-tech/harness@0.3.2"

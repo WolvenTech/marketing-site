@@ -16,7 +16,9 @@ export default function AboutPage() {
       <main>
         <section className="bg-surface-dark px-6 py-16 md:py-20">
           <div className="mx-auto max-w-[1280px]">
-            <span className="text-caption-md font-bold uppercase text-primary">About</span>
+            <span className="text-caption-md font-bold uppercase text-primary">
+              About
+            </span>
             <h1 className="mt-lg max-w-[24ch] text-display-lg font-bold text-on-dark">
               A staging placeholder, dressed up like a real company.
             </h1>
@@ -36,7 +38,9 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="border-t border-hairline pt-lg lg:col-span-2 lg:border-l lg:border-t-0 lg:pl-xxl lg:pt-0">
-              <h2 className="text-heading-sm font-bold text-on-dark">Placeholder facts</h2>
+              <h2 className="text-heading-sm font-bold text-on-dark">
+                Placeholder facts
+              </h2>
               <dl className="mt-lg flex flex-col gap-md">
                 <div className="flex justify-between border-b border-hairline pb-sm">
                   <dt className="text-body-sm text-mute">Founded</dt>
