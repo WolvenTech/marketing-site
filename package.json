@@ -22,7 +22,7 @@
     "harness:score": "harness-score"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm harness:comments && pnpm typecheck"
+    "pre-commit": "pnpm harness:comments && pnpm typecheck && pnpm format:check"
   },
   "dependencies": {
     "next": "^16.2.10",
@@ -45,4 +45,3 @@
     "vitest": "^5.0.4"
   }
 }
-
