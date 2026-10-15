@@ -17,6 +17,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "prepare": "simple-git-hooks",
+    "validate": "pnpm harness:validate && pnpm typecheck && pnpm lint && pnpm test && pnpm format:check",
     "harness:validate": "wolven-harness validate",
     "harness:comments": "wolven-harness comments",
     "harness:score": "harness-score"
