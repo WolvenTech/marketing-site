@@ -11,8 +11,8 @@ Work the tree in **rounds**. The **frontier** is every branch whose prerequisite
 
 Ask a single question per round.
 
-- If your runtime has a native question tool, use it.
-- Otherwise, ask in markdown, in the same shape:
+- Always use the runtime's native question tool (`AskUserQuestion` in Claude Code). Never write the question as markdown when the tool exists.
+- Only a runtime with no question tool asks in markdown, in the same shape:
 
 ```
 ❓ **Q1 — <question title>**: <question body>
