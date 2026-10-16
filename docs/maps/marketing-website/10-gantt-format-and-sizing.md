@@ -2,7 +2,7 @@
 title: Gantt format and phase sizing
 ticket: grilling
 status: open
-blocked_by: ["01","07","08","09","13"]
+blocked_by: ["01","07","08","09","15"]
 ---
 
 ## Question

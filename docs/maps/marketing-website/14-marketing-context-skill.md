@@ -1,7 +1,7 @@
 ---
 title: Vet and install the marketing-context skill
 ticket: task
-status: closed
+status: out_of_scope
 blocked_by: ["02"]
 ---
 
@@ -10,6 +10,10 @@ blocked_by: ["02"]
 Review the Marketing Context Manager skill from mcpmarket.com (contents, security) and, if acceptable, install it. Decide where its context file lives, so the outputs of tickets 03, 04, 05 and 12 come together in one place.
 
 ## Resolution
+
+Moved on 2026-10-16 to the private one-man-team repo as ticket 14 of `docs/maps/marketing-positioning/`, which keeps the original number. Positioning is solved there as the blocker for this map; ticket 15 here tracks it. This copy stays as a pointer and is no longer worked.
+
+## Superseded resolution
 
 Vetted and installed `marketing-context` (source: `alirezarezvani/claude-skills`, `marketing-skill/skills/marketing-context`, commit `aecfb8e0bb71dbf1413082f86b33a5c4c9b8f416`, MIT, last pushed 2026-08-30). No skill was used to resolve this ticket. The Human asked for the install and settled the placement through the question tool.
 

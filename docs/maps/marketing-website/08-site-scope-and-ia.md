@@ -2,7 +2,7 @@
 title: Site scope and information architecture
 ticket: grilling
 status: open
-blocked_by: ["05","06"]
+blocked_by: ["15","16"]
 ---
 
 ## Question

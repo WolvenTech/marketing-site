@@ -1,7 +1,7 @@
 ---
 title: Who must the site convince?
 ticket: research
-status: closed
+status: out_of_scope
 blocked_by: ["02"]
 ---
 
@@ -10,6 +10,10 @@ blocked_by: ["02"]
 Who are the ideal customers (ICP and personas) for Wolven's services, and what do they need to see before they contact us? Who are the talent profiles the recruiting layer targets? Use the PMM skill's ICP framework.
 
 ## Resolution
+
+Moved on 2026-10-16 to the private one-man-team repo as ticket 03 of `docs/maps/marketing-positioning/`, which keeps the original number. Positioning is solved there as the blocker for this map; ticket 15 here tracks it. This copy stays as a pointer and is no longer worked.
+
+## Superseded resolution
 
 No skill was used to resolve this ticket. `research` needs primary sources, and Wolven's own customers have none on the web; `docs/design.md` is synthetic placeholder and does not answer it. The answers below come from the Human in this session, shaped by the PMM skill's ICP template.
 

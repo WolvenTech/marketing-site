@@ -2,7 +2,7 @@
 title: Recruiting layer
 ticket: grilling
 status: open
-blocked_by: ["03","08"]
+blocked_by: ["08","15"]
 ---
 
 ## Question

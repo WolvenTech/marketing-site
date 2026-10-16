@@ -2,7 +2,7 @@
 title: Delivery methodology
 ticket: grilling
 status: open
-blocked_by: ["01"]
+blocked_by: ["01","15"]
 ---
 
 ## Question
